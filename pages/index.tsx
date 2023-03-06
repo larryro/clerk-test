@@ -15,11 +15,20 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={styles.main}>
-        <p>
-          {' '}
-          <Link href={'sign-up'}>Sign Up</Link>
-        </p>
+      <main>
+        <div className='container mt-40 h-full'>
+          <div className='mx-auto w-fit h-10'>
+            {' '}
+            <Link href={'/sign-up'}>
+              <button className='bg-yellow-700 	text-white	px-8 py-4'>Sign Up</button>
+            </Link>
+          </div>
+          <div className='mx-auto w-fit h-10 mt-20'>
+            <Link href={'/sign-in'}>
+              <button className='bg-yellow-700 	text-white	px-8 py-4 '>Sign In</button>
+            </Link>
+          </div>
+        </div>
       </main>
     </>
   )
