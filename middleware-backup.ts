@@ -3,18 +3,21 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 // Set the paths that don't require the user to be signed in
-const publicPaths = ['/', '/sign-in*', '/sign-up*']
+const publicPaths = ['/', '/sign-in*', '/sign-up*', '/create']
 
 const isPublic = (path: string) => {
   return publicPaths.find((x) => path.match(new RegExp(`^${x}$`.replace('*$', '($|/)'))))
 }
 
 export default withClerkMiddleware((request: NextRequest) => {
+  console.log('middleward start')
   if (isPublic(request.nextUrl.pathname)) {
     return NextResponse.next()
   }
+  console.log('come')
   // if the user is not signed in redirect them to the sign in page.
   const { userId } = getAuth(request)
+  console.log('get auth user id', userId)
 
   if (!userId) {
     // redirect the users to /pages/sign-in/[[...index]].ts

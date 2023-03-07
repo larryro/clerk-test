@@ -2,9 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Link from 'next/link'
-
-const inter = Inter({ subsets: ['latin'] })
+import ContentList from './list'
+import Header from '@/component/header'
 
 export default function Home() {
   return (
@@ -16,19 +15,34 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <div className='container mt-40 h-full'>
-          <div className='mx-auto w-fit h-10'>
+        <Header></Header>
+        <div className='container mt-20 h-full'>
+          <ContentList></ContentList>
+        </div>
+
+        {/* <div className='container mt-40 h-full'>
+          <div className='mx-auto w-40 text-center bg-yellow-700 h-fit'>
             {' '}
             <Link href={'/sign-up'}>
               <button className='bg-yellow-700 	text-white	px-8 py-4'>Sign Up</button>
             </Link>
           </div>
-          <div className='mx-auto w-fit h-10 mt-20'>
+          <div className='mx-auto w-40 text-center bg-yellow-700 h-fit mt-20'>
             <Link href={'/sign-in'}>
               <button className='bg-yellow-700 	text-white	px-8 py-4 '>Sign In</button>
             </Link>
           </div>
-        </div>
+          <div className='mx-auto w-40 text-center bg-yellow-700 h-fit mt-20'>
+            <Link href={'/blogs'}>
+              <button className=' text-white px-8 py-4 '>Blogs</button>
+            </Link>
+          </div>
+          <div className='mx-auto w-40 bg-yellow-700 h-fit mt-20'>
+            <Link href={'/write-blog'}>
+              <button className='	text-white	px-8 py-4 '>Write Blog</button>
+            </Link>
+          </div>
+        </div> */}
       </main>
     </>
   )
