@@ -76,9 +76,9 @@ export default function Create() {
                       className='block px-2 w-full max-w-lg rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6'
                       defaultValue={''}
                     />
-                    <p className='mt-2 text-sm text-gray-500'>
+                    {/* <p className='mt-2 text-sm text-gray-500'>
                       Write a few sentences about yourself.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
