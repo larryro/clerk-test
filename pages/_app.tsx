@@ -15,19 +15,22 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ClerkProvider {...pageProps}>
-      {isPublicPage ? (
-        <Component {...pageProps} />
-      ) : (
-        <>
-          <SignedIn>
-            <Component {...pageProps} />
-          </SignedIn>
-          <SignedOut>
-            {/* {pathname.includes('sign-in') ? <SignInPage></SignInPage> : ''} */}
-            {pathname.includes('sign-up') ? <SignUpPage></SignUpPage> : <SignInPage></SignInPage>}
-          </SignedOut>
-        </>
-      )}
+      <Component {...pageProps} />
     </ClerkProvider>
+    // <ClerkProvider {...pageProps}>
+    //   {isPublicPage ? (
+    //     <Component {...pageProps} />
+    //   ) : (
+    //     <>
+    //       <SignedIn>
+    //         <Component {...pageProps} />
+    //       </SignedIn>
+    //       <SignedOut>
+    //         {/* {pathname.includes('sign-in') ? <SignInPage></SignInPage> : ''} */}
+    //         {pathname.includes('sign-up') ? <SignUpPage></SignUpPage> : <SignInPage></SignInPage>}
+    //       </SignedOut>
+    //     </>
+    //   )}
+    // </ClerkProvider>
   )
 }

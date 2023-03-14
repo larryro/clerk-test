@@ -16,19 +16,19 @@ const people = [
 
 export default function ContentList() {
   const router = useRouter()
-  const { getToken, sessionId } = useAuth()
+  // const { getToken, sessionId } = useAuth()
   const [articles, setArticles]: [any, any] = useState([])
-  console.log('sessionid', sessionId)
+  // console.log('sessionid', sessionId)
   useEffect(() => {
     // if (sessionId) {
-    axios.get('/api/articles?depth=2&_clerk_session_id=' + sessionId).then(async (res) => {
+    axios.get('/api/articles?depth=2').then(async (res) => {
       // console.log('token', await getToken())
-      console.log('sessionId', sessionId)
+      // console.log('sessionId', sessionId)
       console.log(res.data.docs)
-      setArticles(res.data.docs)
+      if (res.data && res.data.docs) setArticles(res.data.docs)
     })
     // }
-  }, [sessionId])
+  }, [])
   return (
     <div className='px-4 sm:px-6 lg:px-8'>
       <div className='sm:flex sm:items-center'>
