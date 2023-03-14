@@ -2,8 +2,8 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, SignIn, SignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/router'
-import SignInPage from './sign-in'
-import SignUpPage from './sign-up'
+// import SignInPage from './sign-in'
+// import SignUpPage from './sign-up'
 
 const publicPages: Array<string> = ['/', '/sign-in*', '/sign-up*']
 
