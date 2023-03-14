@@ -1,17 +1,17 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, SignIn, SignUp } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { useRouter } from 'next/router'
 // import SignInPage from './sign-in'
 // import SignUpPage from './sign-up'
 
-const publicPages: Array<string> = ['/', '/sign-in*', '/sign-up*']
+// const publicPages: Array<string> = ['/', '/sign-in*', '/sign-up*']
 
 export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter()
   console.log('pathname', pathname)
   // Check if the current route matches a public page
-  const isPublicPage = publicPages.includes(pathname)
+  // const isPublicPage = publicPages.includes(pathname)
 
   return (
     <ClerkProvider {...pageProps}>
